@@ -1,0 +1,157 @@
+{
+  "version": "41.0.0",
+  "artifacts": {
+    "MyCdkProjectStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "MyCdkProjectStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "MyCdkProjectStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "MyCdkProjectStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0925b9a5b4d0414e7950fddd57f025f113dbe10b3df98bce9882b0c2e1d6b030.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "MyCdkProjectStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "MyCdkProjectStack.assets"
+      ],
+      "metadata": {
+        "/MyCdkProjectStack/DataQueue": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "visibilityTimeout": "*"
+            }
+          }
+        ],
+        "/MyCdkProjectStack/DataQueue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DataQueue8FDBE023"
+          }
+        ],
+        "/MyCdkProjectStack/data-ingestion-rearc": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "addPermission() has no effect on a Lambda Function with region=ap-south-1, account=166534939907, in a Stack with region=${Token[AWS.Region.5]}, account=${Token[AWS.AccountId.1]}. Suppress this warning if this is is intentional, or pass sameEnvironment=true to fromFunctionAttributes() if you would like to add the permissions. [ack: UnclearLambdaEnvironment]",
+            "trace": [
+              "Annotations.addMessage (C:\\Users\\hp\\AppData\\Local\\Temp\\jsii-kernel-kD6A6J\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:1608)",
+              "Annotations.addWarningV2 (C:\\Users\\hp\\AppData\\Local\\Temp\\jsii-kernel-kD6A6J\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:825)",
+              "Import.addPermission (C:\\Users\\hp\\AppData\\Local\\Temp\\jsii-kernel-kD6A6J\\node_modules\\aws-cdk-lib\\aws-lambda\\lib\\function-base.js:2:332)",
+              "addLambdaPermission (C:\\Users\\hp\\AppData\\Local\\Temp\\jsii-kernel-kD6A6J\\node_modules\\aws-cdk-lib\\aws-events-targets\\lib\\util.js:1:1443)",
+              "LambdaFunction.bind (C:\\Users\\hp\\AppData\\Local\\Temp\\jsii-kernel-kD6A6J\\node_modules\\aws-cdk-lib\\aws-events-targets\\lib\\lambda.js:1:971)",
+              "WrappedClass.addTarget (C:\\Users\\hp\\AppData\\Local\\Temp\\jsii-kernel-kD6A6J\\node_modules\\aws-cdk-lib\\aws-events\\lib\\rule.js:1:3618)",
+              "descriptor.value (C:\\Users\\hp\\AppData\\Local\\Temp\\jsii-kernel-kD6A6J\\node_modules\\aws-cdk-lib\\core\\lib\\metadata-resource.js:1:2296)",
+              "C:\\Users\\hp\\AppData\\Local\\Temp\\tmp54r0chc2\\lib\\program.js:294:172",
+              "Kernel._Kernel_ensureSync (C:\\Users\\hp\\AppData\\Local\\Temp\\tmp54r0chc2\\lib\\program.js:916:24)",
+              "Kernel.invoke (C:\\Users\\hp\\AppData\\Local\\Temp\\tmp54r0chc2\\lib\\program.js:294:102)",
+              "KernelHost.processRequest (C:\\Users\\hp\\AppData\\Local\\Temp\\tmp54r0chc2\\lib\\program.js:15467:36)",
+              "KernelHost.run (C:\\Users\\hp\\AppData\\Local\\Temp\\tmp54r0chc2\\lib\\program.js:15427:22)",
+              "Immediate._onImmediate (C:\\Users\\hp\\AppData\\Local\\Temp\\tmp54r0chc2\\lib\\program.js:15428:46)",
+              "process.processImmediate (node:internal/timers:485:21)"
+            ]
+          }
+        ],
+        "/MyCdkProjectStack/DailyScheduleRule": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "enabled": false,
+              "schedule": "*"
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addEventPattern": [
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addTarget": [
+                {}
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:warning",
+            "data": "Either the Event Rule or target has an unresolved environment. \n           If they are being used in a cross-environment setup you need to specify the environment for both. [ack: @aws-cdk/aws-events:ruleUnresolvedEnvironment]",
+            "trace": [
+              "Annotations.addMessage (C:\\Users\\hp\\AppData\\Local\\Temp\\jsii-kernel-kD6A6J\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:1608)",
+              "Annotations.addWarningV2 (C:\\Users\\hp\\AppData\\Local\\Temp\\jsii-kernel-kD6A6J\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:825)",
+              "WrappedClass.sameEnvDimension (C:\\Users\\hp\\AppData\\Local\\Temp\\jsii-kernel-kD6A6J\\node_modules\\aws-cdk-lib\\aws-events\\lib\\rule.js:1:9989)",
+              "WrappedClass.addTarget (C:\\Users\\hp\\AppData\\Local\\Temp\\jsii-kernel-kD6A6J\\node_modules\\aws-cdk-lib\\aws-events\\lib\\rule.js:1:4126)",
+              "descriptor.value (C:\\Users\\hp\\AppData\\Local\\Temp\\jsii-kernel-kD6A6J\\node_modules\\aws-cdk-lib\\core\\lib\\metadata-resource.js:1:2296)",
+              "C:\\Users\\hp\\AppData\\Local\\Temp\\tmp54r0chc2\\lib\\program.js:294:172",
+              "Kernel._Kernel_ensureSync (C:\\Users\\hp\\AppData\\Local\\Temp\\tmp54r0chc2\\lib\\program.js:916:24)",
+              "Kernel.invoke (C:\\Users\\hp\\AppData\\Local\\Temp\\tmp54r0chc2\\lib\\program.js:294:102)",
+              "KernelHost.processRequest (C:\\Users\\hp\\AppData\\Local\\Temp\\tmp54r0chc2\\lib\\program.js:15467:36)",
+              "KernelHost.run (C:\\Users\\hp\\AppData\\Local\\Temp\\tmp54r0chc2\\lib\\program.js:15427:22)",
+              "Immediate._onImmediate (C:\\Users\\hp\\AppData\\Local\\Temp\\tmp54r0chc2\\lib\\program.js:15428:46)",
+              "process.processImmediate (node:internal/timers:485:21)"
+            ]
+          }
+        ],
+        "/MyCdkProjectStack/DailyScheduleRule/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DailyScheduleRule647CF297"
+          }
+        ],
+        "/MyCdkProjectStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/MyCdkProjectStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/MyCdkProjectStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/MyCdkProjectStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "MyCdkProjectStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  },
+  "minimumCliVersion": "2.1005.0"
+}

@@ -1,0 +1,11 @@
+{
+    "source": "aws.events",
+    "detail-type": "Scheduled Event",
+    "detail": {},
+    "time": "2025-06-07T14:00:00Z",
+    "region": "ap-south-1",
+    "resources": [
+        "arn:aws:events:ap-south-1:166534939907:rule/MyCdkProjectStack-DailyScheduleRule647CF297-PTviJITqyK4X"
+    ],
+    "id": "test-id"
+}
